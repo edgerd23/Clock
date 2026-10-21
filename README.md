@@ -29,13 +29,14 @@ The project is also an opportunity to practice front-end development, improve UI
 ### 📂 Project Structure
 
 A typical structure for this project could look like this:
-
+```text
 hand-clock/
+|
 ├── index.html
 ├── style.css
 ├── main.js
 └── README.md
-
+```
 Note: The filenames above are examples. Adjust them to match the actual files in your repository.
 
 ### 🚀 Getting Started
