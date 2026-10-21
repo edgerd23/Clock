@@ -1,0 +1,132 @@
+:root {
+  --bg: #f4f4f4;
+  --face: #ffffff;
+  --ink: #1a1a1a;
+  --tick: #999999;
+  --muted: #666666;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --face: #1e1e1e;
+    --ink: #f2f2f2;
+    --tick: #777777;
+    --muted: #aaaaaa;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: sans-serif;
+}
+
+.clock {
+  width: 280px;
+  height: 280px;
+  border: 8px solid var(--ink);
+  border-radius: 50%;
+  background: var(--face);
+  position: relative;
+  margin: 50px auto 20px;
+}
+
+/* Nukta ya katikati */
+.clock::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+/* Alama za dakika */
+.tick {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 8px;
+  margin-left: -0.5px;
+  background: var(--tick);
+  transform-origin: 50% 140px;
+}
+
+.tick.big {
+  width: 2px;
+  height: 12px;
+  margin-left: -1px;
+  background: var(--ink);
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px;
+  font: bold 20px/30px sans-serif;
+  text-align: center;
+  transform: rotate(calc(var(--n)* 30deg)) translateY(-110px) rotate(calc(var(--n)* -30deg));
+}
+
+.n1 {--n:1}
+.n2 {--n:2}
+.n3 {--n:3}
+.n4 {--n:4}
+.n5 {--n:5}
+.n6 {--n:6}
+.n7 {--n:7}
+.n8 {--n:8}
+.n9 {--n:9}
+.n10 {--n:10}
+.n11 {--n:11}
+.n12 {--n:12}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  background: var(--ink);
+}
+
+.hour-hand {
+  width: 6px;
+  height: 70px;
+  margin-left: -3px;
+}
+
+.minute-hand {
+  width: 4px;
+  height: 100px;
+  margin-left: -2px;
+}
+
+.second-hand {
+  width: 2px;
+  height: 115px;
+  margin-left: -1px;
+  background: red;
+}
+
+/* Saa ya digital na tarehe */
+.digital {
+  text-align: center;
+}
+
+.digital .time {
+  font: bold 32px/1.2 monospace;
+  letter-spacing: 2px;
+}
+
+.digital .date {
+  font: 16px/1.5 sans-serif;
+  color: var(--muted);
+}
